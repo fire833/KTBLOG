@@ -16,18 +16,6 @@
 *	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-import { useState } from 'react';
-import './Entry.css';
-
-function KTBLOG() {
-  return (
-    <div>
-      <div className="header">
-        <a href="http://links.tauser.us/resume" className="resume">Resume</a>
-        <button onClick={(e) => {}}>Refresh Posts</button>
-      </div>
-    </div>
-  )
+.title {
+    
 }
-
-export default KTBLOG;

@@ -16,18 +16,23 @@
 *	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-import { useState } from 'react';
-import './Entry.css';
+import React from 'react';
+import { useState } from "react";
+import './ktblogpost.module.css';
 
-function KTBLOG() {
-  return (
-    <div>
-      <div className="header">
-        <a href="http://links.tauser.us/resume" className="resume">Resume</a>
-        <button onClick={(e) => {}}>Refresh Posts</button>
-      </div>
-    </div>
-  )
+export interface KTBlogPostProps {
+    title?: string,
 }
 
-export default KTBLOG;
+function KTBlogPost(props: KTBlogPostProps) {
+    const [comments, updateComments] = useState();
+
+    return (
+        <div>
+            {props.title != "" ? (<h2 className="title">{props.title}</h2>) : undefined}
+        </div>
+    )
+
+}
+
+export default KTBlogPost;
