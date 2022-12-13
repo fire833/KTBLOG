@@ -21,14 +21,18 @@ import { useState } from "react";
 import './ktblogpost.module.css';
 
 export interface KTBlogPostProps {
+    postId: string, 
     title?: string,
+    timestamp?: string,
+    subtitle?: string,
+    content: string,
 }
 
 function KTBlogPost(props: KTBlogPostProps) {
     const [comments, updateComments] = useState();
 
     return (
-        <div>
+        <div className="entry">
             {props.title != "" ? (<h2 className="title">{props.title}</h2>) : undefined}
         </div>
     )

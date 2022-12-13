@@ -23,8 +23,9 @@ function KTBLOG() {
   return (
     <div>
       <div className="header">
-        <a href="http://links.tauser.us/resume" className="resume">Resume</a>
-        <button onClick={(e) => {}}>Refresh Posts</button>
+        <button onClick={() => {}} className="btn">Resume</button>
+        <button onClick={() => {}} className="btn">Refresh Posts</button>
+        <button onClick={() => {}} className="btn">About</button>
       </div>
     </div>
   )
