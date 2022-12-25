@@ -25,7 +25,6 @@ body {
     min-width: 600px;
     text-align: center;
     text-overflow: inherit;
-    /* margin: 0%; */
 }
 
 h1 {
@@ -55,6 +54,7 @@ button {
     margin-right: 0.25vw;
     text-align: center;
     cursor: cell;
+    border-color: black;
 }
 
 /* .background {

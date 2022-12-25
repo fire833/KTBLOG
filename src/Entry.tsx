@@ -29,7 +29,7 @@ function KTBLOG() {
         <button onClick={() => {}} className="btn">Refresh Posts</button>
         <button onClick={() => {}} className="btn">About</button>
       </div>
-      <div>
+      <div className="content">
         <h1>Hello there world, this is an experimental blog for my writing and other random stuff.</h1>
       </div>
     </div>

@@ -24,8 +24,31 @@
     margin: 0 auto;
 }
 
-.btn {
-    min-width: 10vw;
+.content {
+    min-width: 570px;
+    max-width: 900px;
+    background-color: rgb(44, 44, 44);
+    /* margin-top: 5%; */
+    margin: 0 auto;
+    color: beige;
+    height: 90vh;
+    overflow: none;
+    border-radius: 0.8%;
 }
 
-.btn:active {}
+.content:hover {
+    background-color: rgb(46, 46, 46);
+}
+
+.btn {
+    min-width: 12vw;
+}
+
+.btn:active {
+    background-color: lightslategray;
+}
+
+.btn:hover {
+    border-color: antiquewhite;
+    background-color: #131313;
+}
