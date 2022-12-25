@@ -23,9 +23,14 @@ function KTBLOG() {
   return (
     <div>
       <div className="header">
-        <button onClick={() => {}} className="btn">Resume</button>
+        <button onClick={() => {
+          window.location.href = "https://links.tauser.us/resume"
+        }} className="btn">Resume</button>
         <button onClick={() => {}} className="btn">Refresh Posts</button>
         <button onClick={() => {}} className="btn">About</button>
+      </div>
+      <div>
+        <h1>Hello there world, this is an experimental blog for my writing and other random stuff.</h1>
       </div>
     </div>
   )

@@ -16,13 +16,47 @@
 *	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100;300&display=swap');
+
 html,
 body {
     background: rgb(44, 51, 51);
-    overflow: hidden;
+    overflow: none;
+    min-width: 600px;
+    text-align: center;
+    text-overflow: inherit;
     /* margin: 0%; */
 }
 
-.background {
-    color: rgb(44, 51, 51);
+h1 {
+    font-family: 'Chivo Mono', monospace;
+    font-size: large;
+    font-weight: 300;
 }
+
+h2 {
+    font-family: 'Chivo Mono', monospace;
+    font-size: medium;
+    font-weight: 100;
+}
+
+button {
+    background-color: black;
+    min-height: 50px;
+    max-height: 95px;
+    overflow: visible;
+    align-content: center;
+    align-items: center;
+    font-family: 'Chivo Mono', monospace;
+    font-weight: 300;
+    color: beige;
+    border-radius: 3px;
+    margin-left: 0.25vw;
+    margin-right: 0.25vw;
+    text-align: center;
+    cursor: cell;
+}
+
+/* .background {
+    color: rgb(44, 51, 51);
+} */
