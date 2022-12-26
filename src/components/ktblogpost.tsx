@@ -18,10 +18,10 @@
 
 import React from 'react';
 import { useState } from "react";
-import './ktblogpost.module.css';
+import './ktblogpost.css';
 
 export interface KTBlogPostProps {
-    postId: string, 
+    postId: string,
     title?: string,
     timestamp?: string,
     subtitle?: string,
@@ -33,7 +33,10 @@ function KTBlogPost(props: KTBlogPostProps) {
 
     return (
         <div className="entry">
-            {props.title != "" ? (<h2 className="title">{props.title}</h2>) : undefined}
+            {props.title != "" ? (<h1 className="title">{props.title}</h1>) : (<h1 className="title"></h1>)}
+            {props.subtitle != "" ? (<h2 className="subtitle">{props.subtitle}</h2>) : (<h2 className="subtitle"></h2>)}
+            {props.timestamp != "" ? (<h4 className="timestamp">{props.timestamp}</h4>) : (<h4 className="timestamp">This post has not timestamp.</h4>)}
+            {props.content != "" ? (<p className="content">{props.content}</p>) : (<p className="content">This post has no content.</p>)}
         </div>
     )
 

@@ -18,19 +18,35 @@
 
 import { useState } from 'react';
 import './Entry.css';
+import KTBlogPost, { KTBlogPostProps } from './components/ktblogpost';
 
 function KTBLOG() {
+
+  const [entries, updateEntries] = useState(Array<KTBlogPostProps>(
+    { content: "There are no blog posts yet. Please check back in later to see more content.", postId: "Default" },
+  ));
+
+  const entriesUpdater = () => {
+    fetch("https://api.tauser.us/blog/posts").then((resp) => {
+      return resp.json().then((v) => { updateEntries(v) });
+    });
+  }
+
+  entriesUpdater();
+
   return (
     <div>
       <div className="header">
         <button onClick={() => {
           window.location.href = "https://links.tauser.us/resume"
         }} className="btn">Resume</button>
-        <button onClick={() => {}} className="btn">Refresh Posts</button>
-        <button onClick={() => {}} className="btn">About</button>
+        <button onClick={() => { entriesUpdater() }} className="btn">Refresh Posts</button>
+        <button onClick={() => { }} className="btn">About</button>
       </div>
       <div className="content">
-        <h1>Hello there world, this is an experimental blog for my writing and other random stuff.</h1>
+        {entries.map((entry) => (
+          <KTBlogPost postId={entry.postId} title={entry.title} subtitle={entry.subtitle} timestamp={entry.timestamp} content={entry.content} />
+        ))}
       </div>
     </div>
   )

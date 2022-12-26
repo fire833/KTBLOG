@@ -18,8 +18,26 @@
 
 .entry {
     width: inherit;
-    background-color: darkgray;
-    border-radius: 2vmax;
+    height: fit-content;
+    border-radius: 0.8%;
+    background: black;
+    margin: 1%;
+    /* padding-top: 0.5%; */
+    overflow: none;
 }
 
-.title {}
+.title {
+    text-align: left;
+}
+
+.subtitle {
+
+}
+
+.content {
+    text-align: left;
+}
+
+.timestamp {
+
+}
