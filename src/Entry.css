@@ -31,7 +31,7 @@
     margin: 0 auto;
     color: beige;
     height: 90vh;
-    overflow: none;
+    /* overflow: scroll; */
     border-radius: 0.8%;
 }
 

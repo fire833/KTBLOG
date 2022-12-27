@@ -16,7 +16,6 @@
 *	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-import React from 'react';
 import { useState } from "react";
 import './ktblogpost.css';
 
@@ -36,7 +35,7 @@ function KTBlogPost(props: KTBlogPostProps) {
             {props.title != "" ? (<h1 className="title">{props.title}</h1>) : (<h1 className="title"></h1>)}
             {props.subtitle != "" ? (<h2 className="subtitle">{props.subtitle}</h2>) : (<h2 className="subtitle"></h2>)}
             {props.timestamp != "" ? (<h4 className="timestamp">{props.timestamp}</h4>) : (<h4 className="timestamp">This post has not timestamp.</h4>)}
-            {props.content != "" ? (<p className="content">{props.content}</p>) : (<p className="content">This post has no content.</p>)}
+            {props.content != "" ? (<p className="content">{props.content}</p>) : (<p className="blogentry">This post has no content.</p>)}
         </div>
     )
 

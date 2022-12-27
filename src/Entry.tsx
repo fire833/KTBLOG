@@ -20,11 +20,19 @@ import { useState } from 'react';
 import './Entry.css';
 import KTBlogPost, { KTBlogPostProps } from './components/ktblogpost';
 
+enum blogState {
+  Default = "About",
+  About = "Blog Posts",
+}
+
 function KTBLOG() {
 
   const [entries, updateEntries] = useState(Array<KTBlogPostProps>(
     { content: "There are no blog posts yet. Please check back in later to see more content.", postId: "Default" },
+    // { content: "There are no blog posts yet. Please check back in later to see more content.", postId: "Default" },
   ));
+
+  const [pageState, updatePageState] = useState(blogState.Default);
 
   const entriesUpdater = () => {
     fetch("https://api.tauser.us/blog/posts").then((resp) => {
@@ -40,14 +48,28 @@ function KTBLOG() {
         <button onClick={() => {
           window.location.href = "https://links.tauser.us/resume"
         }} className="btn">Resume</button>
-        <button onClick={() => { entriesUpdater() }} className="btn">Refresh Posts</button>
-        <button onClick={() => { }} className="btn">About</button>
+        <button onClick={() => {
+          if (pageState == blogState.Default) {
+            entriesUpdater();
+          } else if (pageState == blogState.About) {
+            // window.location.href = "mailto:kttpsy@gmail.com";
+          }
+        }} className="btn">{pageState == blogState.Default ? "Refresh Posts" : "Email Me!"}</button>
+        <button onClick={() => {
+          if (pageState == blogState.Default) {
+            updatePageState(blogState.About);
+          } else if (pageState == blogState.About) {
+            updatePageState(blogState.Default)
+          }
+        }} className="btn">{pageState.toString()}</button>
       </div>
-      <div className="content">
-        {entries.map((entry) => (
-          <KTBlogPost postId={entry.postId} title={entry.title} subtitle={entry.subtitle} timestamp={entry.timestamp} content={entry.content} />
-        ))}
-      </div>
+      {pageState == blogState.Default ? (
+        <div className="content">
+          {entries.map((entry) => (
+            <KTBlogPost postId={entry.postId} title={entry.title} subtitle={entry.subtitle} timestamp={entry.timestamp} content={entry.content} />
+          ))}
+        </div>
+      ) : (<h1></h1>)}
     </div>
   )
 }
