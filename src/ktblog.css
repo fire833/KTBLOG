@@ -22,21 +22,31 @@ html,
 body {
     background: rgb(44, 51, 51);
     overflow: none;
-    min-width: 600px;
+    min-width: 300px;
     text-align: center;
     text-overflow: inherit;
+    margin: 0;
 }
 
 h1 {
     font-family: 'Chivo Mono', monospace;
     font-size: large;
     font-weight: 300;
+    margin: 0;
 }
 
 h2 {
     font-family: 'Chivo Mono', monospace;
     font-size: medium;
     font-weight: 100;
+    margin: 0;
+}
+
+h4 {
+    font-family: 'Chivo Mono', monospace;
+    font-size: small;
+    font-weight: 300;
+    margin: 0;
 }
 
 button {

@@ -17,20 +17,27 @@
  */
 
 .entry {
-    width: inherit - 10px;
-    border-radius: 0.8%;
+    min-width: 300px;
+    /* width: inherit; */
+    border-radius: 1%;
     background: black;
+    overflow: hidden;
+    padding: 1%;
     margin: 1%;
-    /* padding-top: 0.5%; */
-    overflow: none;
+    border: 0.5%;
+}
+
+.entry:hover {
+    background: rgb(10, 10, 10);
+    border-color: azure;
 }
 
 .title {
-    text-align: left;
+    text-align: center;
 }
 
 .subtitle {
-
+    text-align: center;
 }
 
 .blogentry {
@@ -38,5 +45,5 @@
 }
 
 .timestamp {
-
+    text-align: left;
 }
