@@ -22,7 +22,7 @@ import './ktblogpost.css';
 export interface KTBlogPostProps {
     postId: number,
     title?: string,
-    timestamp?: string,
+    timestamp?: number,
     subtitle?: string,
     content: string,
 }
@@ -30,11 +30,18 @@ export interface KTBlogPostProps {
 function KTBlogPost(props: KTBlogPostProps) {
     const [comments, updateComments] = useState();
 
+    let d: Date;
+    if (props.timestamp != undefined) {
+        d = new Date(props.timestamp);
+    } else {
+        d = new Date();
+    }
+
     return (
         <div className="entry">
             {props.title != "" ? (<h1 className="title">{props.title}</h1>) : (<h1 className="title"></h1>)}
             {props.subtitle != "" ? (<h2 className="subtitle">{props.subtitle}</h2>) : (<h2 className="subtitle"></h2>)}
-            {props.timestamp != "" ? (<h4 className="timestamp">{props.timestamp}</h4>) : (<h4 className="timestamp">This post has not timestamp.</h4>)}
+            {props.timestamp != undefined ? (<h4 className="timestamp">{d.toString()}</h4>) : (<h4 className="timestamp">This post has no timestamp.</h4>)}
             {props.content != "" ? (<p className="blogentry">{props.content}</p>) : (<p className="blogentry">This post has no content.</p>)}
         </div>
     )
