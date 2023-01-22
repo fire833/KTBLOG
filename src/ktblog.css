@@ -42,9 +42,16 @@ h2 {
     margin: 0;
 }
 
-h4 {
+h3 {
     font-family: 'Chivo Mono', monospace;
     font-size: small;
+    font-weight: 300;
+    margin: 0;
+}
+
+h4 {
+    font-family: 'Chivo Mono', monospace;
+    font-size: smaller;
     font-weight: 300;
     margin: 0;
 }

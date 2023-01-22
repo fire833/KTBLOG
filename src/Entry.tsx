@@ -19,6 +19,7 @@
 import { useState } from 'react';
 import './Entry.css';
 import KTBlogPost, { KTBlogPostProps } from './components/ktblogpost';
+import KTAbout from './components/ktabout';
 
 enum blogState {
   Default = "About",
@@ -74,7 +75,11 @@ function KTBLOG() {
             <KTBlogPost postId={entry.postId} title={entry.title} subtitle={entry.subtitle} timestamp={entry.timestamp} content={entry.content} />
           ))}
         </div>
-      ) : (<h1></h1>)}
+      ) : (
+        <div className="content">
+          <KTAbout/>
+        </div>
+      )}
     </div>
   )
 }
