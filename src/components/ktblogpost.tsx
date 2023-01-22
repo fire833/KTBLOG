@@ -20,7 +20,7 @@ import { useState } from "react";
 import './ktblogpost.css';
 
 export interface KTBlogPostProps {
-    postId: string,
+    postId: number,
     title?: string,
     timestamp?: string,
     subtitle?: string,
