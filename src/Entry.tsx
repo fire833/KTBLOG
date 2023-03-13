@@ -36,12 +36,12 @@ function KTBLOG() {
     // { content: "There are no blog posts yet. Please check back in later to see more content.", postId: 5, title: "Basic title", subtitle: "Subtitle goes here", timestamp: Date.now() },
     // { content: "There are no blog posts yet. Please check back in later to see more content. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", postId: 6, title: "Basic title", subtitle: "Subtitle goes here", timestamp: Date.now() },
     // { content: "There are no blog posts yet. Please check back in later to see more content.", postId: 7, title: "Basic title", subtitle: "Subtitle goes here", timestamp: Date.now() },
-    ));
+  ));
 
   const [pageState, updatePageState] = useState(blogState.Default);
 
   const entriesUpdater = () => {
-    fetch("https://api.tauser.us/blog/posts").then((resp) => {
+    fetch("https://api.tauser.us/blog/blogpost").then((resp) => {
       return resp.json().then((v) => { updateEntries(v) });
     });
   }
@@ -70,14 +70,14 @@ function KTBLOG() {
         }} className="btn">{pageState.toString()}</button>
       </div>
       {pageState == blogState.Default ? (
-        <div className="content">
+        <ul className="content">
           {entries.map((entry) => (
             <KTBlogPost postId={entry.postId} title={entry.title} subtitle={entry.subtitle} timestamp={entry.timestamp} content={entry.content} />
           ))}
-        </div>
+        </ul>
       ) : (
         <div className="content">
-          <KTAbout/>
+          <KTAbout />
         </div>
       )}
     </div>

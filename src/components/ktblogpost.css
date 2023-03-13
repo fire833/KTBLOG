@@ -25,6 +25,7 @@
     padding: 1%;
     margin: 1%;
     border: 0.5%;
+    list-style-type: none;
 }
 
 .entry:hover {

@@ -38,12 +38,12 @@ function KTBlogPost(props: KTBlogPostProps) {
     }
 
     return (
-        <div className="entry">
+        <li className="entry">
             {props.title != "" ? (<h1 className="title">{props.title}</h1>) : (<h1 className="title"></h1>)}
             {props.subtitle != "" ? (<h2 className="subtitle">{props.subtitle}</h2>) : (<h2 className="subtitle"></h2>)}
             {props.timestamp != undefined ? (<h4 className="timestamp">{d.toString()}</h4>) : (<h4 className="timestamp">This post has no timestamp.</h4>)}
             {props.content != "" ? (<p className="blogentry">{props.content}</p>) : (<p className="blogentry">This post has no content.</p>)}
-        </div>
+        </li>
     )
 
 }
